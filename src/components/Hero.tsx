@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ShieldCheck } from "lucide-react";
 import heroImage from "@/assets/hero-photobooth.jpg";
 
 const Hero = () => {
@@ -29,6 +30,10 @@ const Hero = () => {
           >
             Verfügbarkeit prüfen
           </Button>
+          <p className="flex items-center gap-2 text-sm text-muted-foreground mt-4">
+            <ShieldCheck className="w-4 h-4 text-primary" />
+            Transparente Festpreise ab 249&nbsp;€ – keine versteckten Kosten.
+          </p>
         </motion.div>
 
         <motion.div
