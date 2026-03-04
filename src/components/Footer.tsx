@@ -1,11 +1,12 @@
 import { Mail, MapPin } from "lucide-react";
+import logo from "@/assets/feststube-logo-2.avif";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <h3 className="font-extrabold text-foreground text-lg mb-2">feststube</h3>
+          <img src={logo} alt="Feststube" className="h-10 w-auto mb-3" />
           <p className="text-sm text-muted-foreground">
             Die premium Fotobox für unvergessliche Events in Esslingen und Umgebung.
           </p>
