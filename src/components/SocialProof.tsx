@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const reviews = [
-  { name: "Max & Anna", text: "Die Fotobox war das absolute Highlight unserer Hochzeit! Jeder Gast war begeistert.", event: "Hochzeit" },
-  { name: "Firmen-Event GmbH", text: "Professionell, pünktlich und die Fotos waren genial. Sehr empfehlenswert!", event: "Firmenfeier" },
-  { name: "Lisa M.", text: "Haben die Fotobox für meinen 30. gemietet – bester Partyspaß ever!", event: "Geburtstag" },
+  { name: "Max & Anna", text: "Die Fotobox war das absolute Highlight unserer Hochzeit! Der Aufbau durch das Team verlief komplett geräuschlos im Hintergrund. Die Bilder haben Studio-Qualität.", event: "Hochzeit" },
+  { name: "Firmen-Event GmbH", text: "Professionell, super pünktlich und die gebrandeten Fotostreifen kamen beim Team genial an. Sehr empfehlenswert für jedes Corporate Event in der Region.", event: "Firmenfeier" },
+  { name: "Lisa M.", text: "Habe die Box für meinen 30. gemietet. Die Requisiten waren der Hammer und der Drucker ist irre schnell. Alle Gäste haben ihre Bilder direkt an den Kühlschrank gepinnt!", event: "30. Geburtstag" },
 ];
 
 const SocialProof = () => (
-  <section className="py-20 md:py-28 bg-muted/50">
+  <section className="py-20 md:py-28 bg-background">
     <div className="container max-w-4xl">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
