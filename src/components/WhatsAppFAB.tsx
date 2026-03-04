@@ -15,7 +15,7 @@ const WhatsAppFAB = () => (
         <img
           src={whatsappIcon}
           alt="WhatsApp"
-          className="w-14 h-14 rounded-full object-cover relative z-10"
+          className="w-14 h-14 rounded-full object-cover relative z-10 mix-blend-multiply"
         />
       </a>
     </TooltipTrigger>
