@@ -60,7 +60,7 @@ const BookingFunnel = () => {
   };
 
   return (
-    <section id="booking-funnel" className="py-20 md:py-28">
+    <section id="booking-funnel" className="py-20 md:py-28 bg-muted/50">
       <div className="container max-w-2xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -86,7 +86,7 @@ const BookingFunnel = () => {
           <AnimatePresence mode="wait">
             {step === 1 && (
               <motion.div key="step1" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Was feierst du? 🎉</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Was feierst du?</h2>
                 <p className="text-muted-foreground mb-6">Wähle deinen Event-Typ.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {eventOptions.map((opt) => (
@@ -110,7 +110,7 @@ const BookingFunnel = () => {
 
             {step === 2 && (
               <motion.div key="step2" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Wie lange brauchst du uns? ⏰</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Wie lange brauchst du uns?</h2>
                 <p className="text-muted-foreground mb-6">Wähle die gewünschte Dauer.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {durationOptions.map((opt) => (
@@ -134,7 +134,7 @@ const BookingFunnel = () => {
 
             {step === 3 && (
               <motion.div key="step3" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Mach es besonders! ✨</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Mach es besonders!</h2>
                 <p className="text-muted-foreground mb-6">Wähle optionale Extras aus.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {extraOptions.map((opt) => (
@@ -158,7 +158,7 @@ const BookingFunnel = () => {
 
             {step === 4 && (
               <motion.div key="step4" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Lass uns quatschen! 💬</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Lass uns quatschen!</h2>
                 <div className="bg-muted rounded-xl p-5 mb-6 text-foreground">
                   <p className="text-sm text-muted-foreground mb-1">Deine Zusammenfassung:</p>
                   <p className="font-semibold">

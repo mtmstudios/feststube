@@ -2,7 +2,9 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BookingFunnel from "@/components/BookingFunnel";
 import BentoFeatures from "@/components/BentoFeatures";
+import GalleryInfo from "@/components/GalleryInfo";
 import SocialProof from "@/components/SocialProof";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
@@ -14,7 +16,9 @@ const Index = () => {
         <Hero />
         <BookingFunnel />
         <BentoFeatures />
+        <GalleryInfo />
         <SocialProof />
+        <FAQ />
       </main>
       <Footer />
       <WhatsAppFAB />

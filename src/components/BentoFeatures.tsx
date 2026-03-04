@@ -10,7 +10,7 @@ const features = [
 ];
 
 const BentoFeatures = () => (
-  <section className="py-20 md:py-28 bg-card">
+  <section className="py-20 md:py-28 bg-background">
     <div className="container max-w-4xl">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ const BentoFeatures = () => (
         viewport={{ once: true }}
         className="text-3xl md:text-4xl font-extrabold text-foreground text-center mb-12"
       >
-        Warum Feststube? 💜
+        Warum Feststube?
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {features.map((f, i) => (
@@ -29,7 +29,7 @@ const BentoFeatures = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className={cn(
-              "group rounded-2xl border border-border/50 bg-background p-7 hover:shadow-lg hover:scale-[1.02] transition-all duration-300",
+              "group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-lg hover:scale-[1.02] transition-all duration-300",
               f.large && "md:col-span-1"
             )}
           >
