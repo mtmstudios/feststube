@@ -12,7 +12,6 @@ const Header = () => {
           <span className="text-xl font-extrabold tracking-tight text-foreground">
             feststube
           </span>
-          <span className="text-primary text-2xl">🎈</span>
         </a>
         <Button onClick={scrollToFunnel} size="sm" className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-6 font-semibold">
           Jetzt anfragen

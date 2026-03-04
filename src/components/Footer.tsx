@@ -1,10 +1,38 @@
+import { Mail, MapPin } from "lucide-react";
+
 const Footer = () => (
-  <footer className="py-10 border-t border-border">
-    <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-      <p>© {new Date().getFullYear()} Feststube Esslingen. Alle Rechte vorbehalten.</p>
-      <div className="flex gap-6">
-        <a href="#" className="hover:text-foreground transition-colors">Impressum</a>
-        <a href="#" className="hover:text-foreground transition-colors">Datenschutz</a>
+  <footer className="py-12 border-t border-border">
+    <div className="container">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 className="font-extrabold text-foreground text-lg mb-2">feststube</h3>
+          <p className="text-sm text-muted-foreground">
+            Die premium Fotobox für unvergessliche Events in Esslingen und Umgebung.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
+          <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+            <a href="mailto:hallo@feststube.de" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <Mail className="w-4 h-4" />
+              hallo@feststube.de
+            </a>
+            <span className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              Esslingen am Neckar
+            </span>
+          </div>
+        </div>
+        <div>
+          <h4 className="font-semibold text-foreground mb-2">Rechtliches</h4>
+          <div className="flex flex-col gap-2 text-sm">
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Impressum</a>
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-border pt-6 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Feststube Esslingen. Alle Rechte vorbehalten.
       </div>
     </div>
   </footer>

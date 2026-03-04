@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import feststubeLogo from "@/assets/feststube-logo.avif";
+import heroImage from "@/assets/hero-photobooth.jpg";
 
 const Hero = () => {
   const scrollToFunnel = () => {
@@ -8,36 +8,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-28 pb-20 md:pt-40 md:pb-32">
-      <div className="container flex flex-col items-center text-center gap-8">
-        <motion.img
-          src={feststubeLogo}
-          alt="Feststube – Fotobox für Events in Esslingen"
-          className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-
+    <section className="pt-28 pb-20 md:pt-40 md:pb-32 bg-background">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl"
+          transition={{ duration: 0.6 }}
+          className="text-left"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight mb-4">
             Die perfekte Fotobox für dein Event in Esslingen.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8">
             Modernes Design, Studio-Qualität und 100% Spaß. Sichere dir jetzt das Highlight für deine Feier.
           </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
           <Button
             onClick={scrollToFunnel}
             size="lg"
@@ -45,6 +29,18 @@ const Hero = () => {
           >
             Verfügbarkeit prüfen
           </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <img
+            src={heroImage}
+            alt="Fröhliche Gruppe in der Fotobox bei einem Event in Esslingen"
+            className="w-full rounded-2xl shadow-2xl object-cover aspect-[3/4]"
+          />
         </motion.div>
       </div>
     </section>
