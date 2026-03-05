@@ -96,8 +96,9 @@ const BookingFunnel = () => {
                     <button
                       key={opt.id}
                       onClick={() => setEventType(opt.id)}
+                      aria-label={`Event-Typ: ${opt.label}`}
                       className={cn(
-                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md",
+                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                         eventType === opt.id
                           ? "border-primary bg-primary/10 shadow-md"
                           : "border-border bg-background hover:border-primary/40"
@@ -120,8 +121,9 @@ const BookingFunnel = () => {
                     <button
                       key={opt.id}
                       onClick={() => setDuration(opt.id)}
+                      aria-label={`Dauer: ${opt.label}`}
                       className={cn(
-                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md",
+                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                         duration === opt.id
                           ? "border-primary bg-primary/10 shadow-md"
                           : "border-border bg-background hover:border-primary/40"
@@ -144,8 +146,9 @@ const BookingFunnel = () => {
                     <button
                       key={opt.id}
                       onClick={() => toggleExtra(opt.id)}
+                      aria-label={`Extra: ${opt.label}`}
                       className={cn(
-                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md",
+                        "flex flex-col items-center gap-3 p-6 rounded-xl border-2 transition-all duration-200 cursor-pointer hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                         extras.includes(opt.id)
                           ? "border-primary bg-primary/10 shadow-md"
                           : "border-border bg-background hover:border-primary/40"
