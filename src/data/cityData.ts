@@ -24,9 +24,9 @@ export const cityData: Record<string, CityData> = {
     testimonialText:
       "Genialer Service für unser Corporate Event in Stuttgart. Die Box sah super edel aus!",
     testimonialAuthor: "Corporate Event GmbH, Stuttgart",
-    metaTitle: "Fotobox mieten in Stuttgart | Feststube Esslingen",
+    metaTitle: "Fotobox mieten Stuttgart | Das Party-Highlight | Feststube",
     metaDescription:
-      "Premium Fotobox für Hochzeit, Firmenfeier & Party in Stuttgart mieten. DSLR-Qualität, Sofortdruck & stressfreier Aufbau aus Esslingen. Jetzt anfragen!",
+      "📸 Premium Fotobox für dein Event in Stuttgart mieten. ✔️ Inkl. Requisiten & Sofort-Druck ✔️ Stressfreier Aufbau vor Ort. Sichere dir jetzt dein Highlight!",
   },
   ulm: {
     slug: "ulm",
@@ -40,9 +40,9 @@ export const cityData: Record<string, CityData> = {
     testimonialText:
       "Haben die Box für unsere Hochzeit in Ulm gebucht. Top Qualität und der Drucker ist irre schnell!",
     testimonialAuthor: "Julia & Tom, Ulm",
-    metaTitle: "Fotobox mieten in Ulm | Feststube Esslingen",
+    metaTitle: "Fotobox mieten Ulm & Neu-Ulm | Premium Qualität | Feststube",
     metaDescription:
-      "Premium Fotobox für Events in Ulm & Neu-Ulm mieten. DSLR-Kamera, Sofortdruck & professioneller Aufbau. Jetzt unverbindlich anfragen!",
+      "📸 Miete unsere stylische Fotobox für deine Hochzeit oder Feier in Ulm. ✔️ DSLR-Kamera ✔️ Print-Flatrate ✔️ Persönlicher Service. Jetzt anfragen!",
   },
   goeppingen: {
     slug: "goeppingen",
@@ -56,8 +56,8 @@ export const cityData: Record<string, CityData> = {
     testimonialText:
       "Der Hit auf meinem 30. Geburtstag in Göppingen! Die Lieferung war auf die Minute pünktlich.",
     testimonialAuthor: "Sarah M., Göppingen",
-    metaTitle: "Fotobox mieten in Göppingen | Feststube Esslingen",
+    metaTitle: "Fotobox mieten Göppingen | Für Hochzeit & Event | Feststube",
     metaDescription:
-      "Fotobox für Hochzeit, Geburtstag & Firmenfeier in Göppingen mieten. Premium-Qualität aus Esslingen mit stressfreiem Aufbau. Jetzt anfragen!",
+      "📸 Die perfekte Fotobox für dein Event im Filstal & Göppingen. ✔️ Top-Qualität ab 249€ ✔️ Inkl. Requisiten & digitaler Galerie. Jetzt Verfügbarkeit checken!",
   },
 };
