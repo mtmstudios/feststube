@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BookingFunnel from "@/components/BookingFunnel";
@@ -11,6 +12,14 @@ import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Fotobox mieten Esslingen | Premium Qualität ab 249€ | Feststube";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "📸 Miete die perfekte Fotobox für deine Hochzeit oder Feier in Esslingen! ✔️ Studio-Qualität ✔️ Sofort-Druck ✔️ Kostenloser Aufbau. Jetzt Termin prüfen!");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
