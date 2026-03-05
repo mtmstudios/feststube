@@ -45,15 +45,15 @@ const ProcessSteps = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="relative z-10 bg-card rounded-2xl p-8 pt-12 shadow-sm border border-border"
+            className="relative z-10 bg-card rounded-2xl p-8 pt-12 shadow-sm border border-border text-center md:text-left"
           >
             {/* Step number badge - overlapping top-left */}
-            <div className="absolute -top-5 left-6 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
               <span className="text-lg font-bold text-primary-foreground">{step.num}</span>
             </div>
 
             {/* Icon */}
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
               <step.icon className="w-5 h-5 text-primary" />
             </div>
 
