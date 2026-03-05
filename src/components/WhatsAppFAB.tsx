@@ -1,4 +1,4 @@
-import whatsappIcon from "@/assets/whatsapp-icon.png";
+import whatsappIcon from "@/assets/whatsapp-logo.png";
 
 const WhatsAppFAB = () => (
   <a
