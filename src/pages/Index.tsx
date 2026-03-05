@@ -5,6 +5,7 @@ import BentoFeatures from "@/components/BentoFeatures";
 import GalleryInfo from "@/components/GalleryInfo";
 import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
+import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
@@ -19,6 +20,7 @@ const Index = () => {
         <GalleryInfo />
         <SocialProof />
         <FAQ />
+        <InstagramFeed />
       </main>
       <Footer />
       <WhatsAppFAB />
