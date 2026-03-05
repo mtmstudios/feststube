@@ -26,7 +26,7 @@ const SocialProof = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-background rounded-2xl border border-border/50 p-6"
+            className="bg-background rounded-2xl border border-border/50 p-6 text-center md:text-left items-center md:items-start flex flex-col"
           >
             <div className="flex gap-0.5 mb-3">
               {Array.from({ length: 5 }).map((_, j) => (
