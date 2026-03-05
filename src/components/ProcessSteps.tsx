@@ -23,7 +23,7 @@ const steps = [
 ];
 
 const ProcessSteps = () => (
-  <section className="py-20 md:py-28 bg-muted/50">
+  <section className="py-20 md:py-28 bg-background" aria-label="So funktioniert es in 3 Schritten">
     <div className="container max-w-5xl">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const ProcessSteps = () => (
 
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
         {/* Connecting dashed line on desktop */}
-        <div className="hidden md:block absolute top-[2.75rem] left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px border-t-2 border-dashed border-primary/30 z-0" />
+        <div className="hidden md:block absolute top-10 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px border-t-2 border-dashed border-primary/30 z-0" />
 
         {steps.map((step, i) => (
           <motion.div
@@ -45,11 +45,11 @@ const ProcessSteps = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="relative z-10 flex flex-col items-center text-center bg-card border border-border rounded-xl shadow-sm p-6 pt-8"
+            className="relative z-10 bg-card rounded-2xl p-8 pt-12 shadow-sm border border-border"
           >
-            {/* Step number badge */}
-            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 shadow-md">
-              <span className="text-xl font-bold text-primary-foreground">{step.num}</span>
+            {/* Step number badge - overlapping top-left */}
+            <div className="absolute -top-5 left-6 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
+              <span className="text-lg font-bold text-primary-foreground">{step.num}</span>
             </div>
 
             {/* Icon */}
@@ -57,8 +57,8 @@ const ProcessSteps = () => (
               <step.icon className="w-5 h-5 text-primary" />
             </div>
 
-            <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h3 className="text-lg font-bold text-foreground mb-2 text-left">{step.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed text-left">
               {step.desc}
             </p>
           </motion.div>

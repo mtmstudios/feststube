@@ -87,3 +87,35 @@
     @apply bg-background/70 backdrop-blur-xl border-b border-border/50;
   }
 }
+
+/* Accessibility: High Contrast */
+html.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --muted: 210 20% 90%;
+  --muted-foreground: 0 0% 20%;
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 0%;
+  --border: 0 0% 60%;
+}
+
+/* Accessibility: Large Text */
+html.large-text {
+  font-size: 112%;
+}
+
+/* Accessibility: Reduced Motion */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 4px;
+}

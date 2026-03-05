@@ -12,6 +12,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 import ServiceAreas from "@/components/ServiceAreas";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 
 const Index = () => {
   useEffect(() => {
@@ -39,6 +40,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppFAB />
+      <AccessibilityWidget />
     </div>
   );
 };
