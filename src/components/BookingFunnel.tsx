@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, MessageCircle, Mail } from "lucide-react";
+import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, MessageCircle, Mail, Baby, GraduationCap, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type EventType = "hochzeit" | "firmenfeier" | "party";
+type EventType = "hochzeit" | "firmenfeier" | "party" | "taufe" | "abiball" | "sonstiges";
 type Duration = "stunden" | "abend" | "wochenende";
 type Extra = "hintergrund" | "requisiten" | "gaestebuch";
 
@@ -12,6 +12,9 @@ const eventOptions = [
   { id: "hochzeit" as EventType, label: "Hochzeit", icon: Heart },
   { id: "firmenfeier" as EventType, label: "Firmenfeier", icon: Briefcase },
   { id: "party" as EventType, label: "Party / Geburtstag", icon: PartyPopper },
+  { id: "taufe" as EventType, label: "Taufe / Kommunion", icon: Baby },
+  { id: "abiball" as EventType, label: "Abiball / Abschluss", icon: GraduationCap },
+  { id: "sonstiges" as EventType, label: "Sonstiges", icon: MoreHorizontal },
 ];
 
 const durationOptions = [
@@ -26,7 +29,7 @@ const extraOptions = [
   { id: "gaestebuch" as Extra, label: "Gästebuch-Service", icon: BookOpen },
 ];
 
-const eventLabels: Record<EventType, string> = { hochzeit: "eine Hochzeit", firmenfeier: "eine Firmenfeier", party: "eine Party / Geburtstag" };
+const eventLabels: Record<EventType, string> = { hochzeit: "eine Hochzeit", firmenfeier: "eine Firmenfeier", party: "eine Party / Geburtstag", taufe: "eine Taufe / Kommunion", abiball: "einen Abiball / Abschluss", sonstiges: "ein individuelles Event" };
 const durationLabels: Record<Duration, string> = { stunden: "ein paar Stunden", abend: "den ganzen Abend", wochenende: "ein komplettes Wochenende" };
 const extraLabels: Record<Extra, string> = { hintergrund: "Premium Hintergrund", requisiten: "Requisiten-Koffer", gaestebuch: "Gästebuch-Service" };
 
@@ -88,7 +91,7 @@ const BookingFunnel = () => {
               <motion.div key="step1" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Was feierst du?</h2>
                 <p className="text-muted-foreground mb-6">Wähle deinen Event-Typ.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {eventOptions.map((opt) => (
                     <button
                       key={opt.id}
