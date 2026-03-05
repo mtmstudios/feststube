@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/feststube-logo-2.avif";
+import logo from "@/assets/feststube-logo-2.png";
 
 const Header = () => {
   const scrollToFunnel = () => {

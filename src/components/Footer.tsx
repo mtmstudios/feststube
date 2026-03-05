@@ -1,5 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
-import logo from "@/assets/feststube-logo-2.avif";
+import logo from "@/assets/feststube-logo-2.png";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
