@@ -6,6 +6,7 @@ import GalleryInfo from "@/components/GalleryInfo";
 import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
 import InstagramFeed from "@/components/InstagramFeed";
+import ServiceAreas from "@/components/ServiceAreas";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
@@ -21,6 +22,7 @@ const Index = () => {
         <SocialProof />
         <FAQ />
         <InstagramFeed />
+        <ServiceAreas />
       </main>
       <Footer />
       <WhatsAppFAB />
