@@ -29,7 +29,7 @@ const BentoFeatures = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className={cn(
-              "group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-lg hover:scale-[1.02] transition-all duration-300",
+              "group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-center md:text-left items-center md:items-start flex flex-col",
               f.large && "md:col-span-1"
             )}
           >
