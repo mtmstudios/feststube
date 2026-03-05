@@ -55,13 +55,13 @@ const GalleryInfo = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-background rounded-2xl border border-border/50 p-6"
+        className="mt-10 flex flex-col items-center text-center gap-4 bg-background rounded-2xl border border-border/50 p-6"
       >
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
           <Camera className="w-6 h-6 text-primary" />
         </div>
         <div>
-          <h3 className="font-bold text-foreground mb-1 flex items-center gap-2">
+          <h3 className="font-bold text-foreground mb-1 flex items-center justify-center gap-2">
             Professionelle DSLR-Kamera
             <Sparkles className="w-4 h-4 text-primary" />
           </h3>
