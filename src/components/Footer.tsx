@@ -1,4 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/feststube-logo-2.png";
 
 const Footer = () => (
@@ -27,8 +28,8 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold text-foreground mb-2">Rechtliches</h4>
           <div className="flex flex-col gap-2 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Impressum</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Datenschutz</a>
+            <Link to="/impressum" className="text-muted-foreground hover:text-foreground transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="text-muted-foreground hover:text-foreground transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>
