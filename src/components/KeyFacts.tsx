@@ -50,24 +50,33 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
 const KeyFacts = () => (
   <section className="py-16 md:py-20 bg-background">
     <div className="container max-w-4xl">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-        {facts.map((fact, i) => (
-          <motion.div
-            key={fact.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="flex flex-col items-center text-center gap-2"
-          >
-            <fact.icon className="w-6 h-6 text-primary mb-1" />
-            <span className="text-3xl md:text-4xl font-extrabold text-foreground">
-              <AnimatedNumber value={fact.value} suffix={fact.suffix} />
-            </span>
-            <span className="text-sm text-muted-foreground">{fact.label}</span>
-          </motion.div>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-2xl border border-border/60 bg-card shadow-sm px-8 py-10"
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border/50">
+          {facts.map((fact, i) => (
+            <motion.div
+              key={fact.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex flex-col items-center text-center gap-2 py-6 md:py-0 px-4 first:pt-0 last:pb-0 md:first:pt-0 md:last:pb-0"
+            >
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-1">
+                <fact.icon className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-3xl md:text-4xl font-extrabold text-foreground">
+                <AnimatedNumber value={fact.value} suffix={fact.suffix} />
+              </span>
+              <span className="text-sm text-muted-foreground leading-tight">{fact.label}</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   </section>
 );
