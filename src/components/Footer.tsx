@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <img src={logo} alt="Feststube" className="h-10 w-auto mb-3" />
+          <img src={logo} alt="Feststube" className="h-10 w-auto mb-3 scale-x-[-1]" />
           <p className="text-sm text-muted-foreground">
             Die premium Fotobox für unvergessliche Events in Esslingen und Umgebung.
           </p>
