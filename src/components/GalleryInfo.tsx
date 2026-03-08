@@ -33,20 +33,26 @@ const GalleryInfo = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {images.map((img, i) => (
-          <motion.div
-            key={img.alt}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="overflow-hidden rounded-2xl shadow-lg"
-          >
-            <img
+          <div key={img.alt} className="relative overflow-hidden rounded-2xl shadow-lg">
+            {/* Cinematic wipe-reveal overlay */}
+            <motion.div
+              className="absolute inset-0 bg-muted z-10 rounded-2xl"
+              initial={{ x: "0%" }}
+              whileInView={{ x: "101%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, delay: 0.15 + i * 0.2, ease: [0.77, 0, 0.175, 1] }}
+            />
+            <motion.img
               src={img.src}
               alt={img.alt}
-              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+              initial={{ scale: 1.1 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, delay: 0.15 + i * 0.2, ease: [0.33, 1, 0.68, 1] }}
+              whileHover={{ scale: 1.06 }}
+              className="w-full h-64 object-cover transition-transform duration-500"
             />
-          </motion.div>
+          </div>
         ))}
       </div>
 

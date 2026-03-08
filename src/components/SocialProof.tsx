@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const reviews = [
-  { name: "Max & Anna", text: "Die Fotobox war das absolute Highlight unserer Hochzeit! Der Aufbau verlief komplett geräuschlos im Hintergrund. Die Bilder haben Studio-Qualität.", event: "Hochzeit" },
-  { name: "Firmen-Event GmbH", text: "Professionell, super pünktlich und die gebrandeten Fotostreifen kamen beim Team genial an. Sehr empfehlenswert für jedes Corporate Event in der Region.", event: "Firmenfeier" },
-  { name: "Lisa M.", text: "Habe die Box für meinen 30. gemietet. Die Requisiten waren der Hammer und der Drucker ist irre schnell. Alle Gäste haben ihre Bilder direkt an den Kühlschrank gepinnt!", event: "30. Geburtstag" },
+  { name: "Max & Anna", text: "Die Fotobox war das absolute Highlight unserer Hochzeit! Der Aufbau verlief komplett geräuschlos im Hintergrund. Die Bilder haben Studio-Qualität.", event: "Hochzeit", dir: "left" },
+  { name: "Firmen-Event GmbH", text: "Professionell, super pünktlich und die gebrandeten Fotostreifen kamen beim Team genial an. Sehr empfehlenswert für jedes Corporate Event in der Region.", event: "Firmenfeier", dir: "bottom" },
+  { name: "Lisa M.", text: "Habe die Box für meinen 30. gemietet. Die Requisiten waren der Hammer und der Drucker ist irre schnell. Alle Gäste haben ihre Bilder direkt an den Kühlschrank gepinnt!", event: "30. Geburtstag", dir: "right" },
 ];
+
+const getInitial = (dir: string) => {
+  if (dir === "left")   return { opacity: 0, x: -40 };
+  if (dir === "right")  return { opacity: 0, x: 40 };
+  return { opacity: 0, y: 40 };
+};
 
 const SocialProof = () => (
   <section className="py-20 md:py-28 bg-background">
@@ -19,7 +25,6 @@ const SocialProof = () => (
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
           Das sagen unsere Kunden
         </h2>
-        {/* Aggregate rating */}
         <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
           <span className="flex items-center gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -35,11 +40,12 @@ const SocialProof = () => (
         {reviews.map((r, i) => (
           <motion.div
             key={r.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={getInitial(r.dir)}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-2xl border border-border/50 p-6 flex flex-col relative"
+            transition={{ delay: i * 0.12, duration: 0.55, ease: [0.33, 1, 0.68, 1] }}
+            whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 22 } }}
+            className="bg-card rounded-2xl border border-border/50 p-6 flex flex-col relative cursor-default"
           >
             {/* Decorative quote mark */}
             <span

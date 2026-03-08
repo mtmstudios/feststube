@@ -35,32 +35,43 @@ const ProcessSteps = () => (
       </motion.h2>
 
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-        {/* Connecting dashed line on desktop */}
-        <div className="hidden md:block absolute top-10 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px border-t-2 border-dashed border-primary/30 z-0" />
+        {/* Animated connecting line – draws itself from left to right */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1], delay: 0.2 }}
+          style={{ originX: 0 }}
+          className="hidden md:block absolute top-10 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-[2px] bg-gradient-to-r from-primary/30 via-primary to-primary/30 z-0"
+        />
 
         {steps.map((step, i) => (
           <motion.div
             key={step.num}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="relative z-10 bg-card rounded-2xl p-8 pt-12 shadow-sm border border-border text-center md:text-left"
+            transition={{ delay: 0.4 + i * 0.2, duration: 0.55, ease: [0.33, 1, 0.68, 1] }}
+            whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 22 } }}
+            className="relative z-10 bg-card rounded-2xl p-8 pt-12 shadow-sm border border-border text-center md:text-left cursor-default"
           >
-            {/* Step number badge - overlapping top-left */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
+            {/* Step number badge – pops in with spring */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 + i * 0.2, type: "spring", stiffness: 400, damping: 18 }}
+              className="absolute -top-5 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md shadow-primary/30"
+            >
               <span className="text-lg font-bold text-primary-foreground">{step.num}</span>
-            </div>
+            </motion.div>
 
-            {/* Icon */}
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
               <step.icon className="w-5 h-5 text-primary" />
             </div>
 
             <h3 className="text-lg font-bold text-foreground mb-2 text-left">{step.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed text-left">
-              {step.desc}
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed text-left">{step.desc}</p>
           </motion.div>
         ))}
       </div>

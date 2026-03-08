@@ -49,22 +49,26 @@ const BentoFeatures = () => (
         Alles aus einer Hand – von der Lieferung bis zum digitalen Fotoalbum.
       </motion.p>
 
-      {/* Bento Grid: row 1 → [wide, normal], row 2 → [normal, wide] */}
+      {/* True bento: wide → narrow | narrow → wide */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {features.map((f, i) => (
           <motion.div
             key={f.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className={`group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex flex-col${
+            whileHover={{ y: -8, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+            className={`group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-xl transition-shadow duration-300 flex flex-col cursor-default${
               f.wide ? " md:col-span-2" : ""
             }`}
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+            <motion.div
+              whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.4 } }}
+              className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors"
+            >
               <f.icon className="w-6 h-6 text-primary" />
-            </div>
+            </motion.div>
             <h3 className="text-lg font-bold text-foreground mb-2">{f.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
           </motion.div>
