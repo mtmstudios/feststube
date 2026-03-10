@@ -229,99 +229,130 @@ const Zeltvermietung = () => {
 
       <main>
         {/* ─── Hero ─────────────────────────────────────── */}
-        <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-background overflow-hidden">
-          {/* Blobs */}
+        <section className="relative pt-28 pb-20 md:pt-40 md:pb-32 bg-background overflow-hidden">
           <motion.div
             aria-hidden
             animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl"
+            className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl"
           />
           <motion.div
             aria-hidden
             animate={{ x: [0, -20, 0], y: [0, 15, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="pointer-events-none absolute -bottom-20 right-0 w-[350px] h-[350px] rounded-full bg-primary/10 blur-3xl"
+            className="pointer-events-none absolute -bottom-20 right-0 w-[400px] h-[400px] rounded-full bg-primary/10 blur-3xl"
           />
 
-          <div className="container max-w-4xl text-center relative">
+          <div className="container relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary rounded-full px-4 py-1.5 text-sm font-semibold mb-6"
+              initial="hidden"
+              animate="visible"
+              className="text-center md:text-left flex flex-col items-center md:items-start"
             >
-              <span className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                ))}
-              </span>
-              5,0 · Hunderte zufriedene Veranstaltungen
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight mb-6"
-            >
-              Zeltvermietung in{" "}
-              <span className="text-primary">Esslingen</span> &amp; Umgebung
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
-            >
-              Pagodenzelt, Partyzelt oder großes Eventplan – wir liefern, bauen auf und
-              kümmern uns um alles. Du feierst einfach.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4 justify-center"
-            >
-              <a href="mailto:hallo@feststube.de">
-                <Button
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/30"
-                >
-                  Kostenloses Angebot anfragen
-                </Button>
-              </a>
-              <a href="tel:+4917612345678">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full px-10 py-6 text-lg font-bold"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Jetzt anrufen
-                </Button>
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-6 justify-center mt-10 text-sm text-muted-foreground"
-            >
-              {[
-                "Aufbau & Abbau inklusive",
-                "bis 200 Gäste",
-                "Ganzjährig buchbar",
-                "Festpreisgarantie",
-              ].map((item) => (
-                <span key={item} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                  {item}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary rounded-full px-4 py-1.5 text-sm font-semibold mb-6"
+              >
+                <span className="flex items-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  ))}
                 </span>
-              ))}
+                5,0 · Hunderte zufriedene Events
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, delay: 0.2 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight mb-4"
+              >
+                Zeltvermietung in{" "}
+                <span className="text-primary">Esslingen</span>
+                {" "}&amp; Umgebung
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8"
+              >
+                Pagodenzelt, Partyzelt oder großes Eventzelt – wir liefern, bauen auf und
+                kümmern uns um alles. Du feierst einfach.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex flex-col sm:flex-row items-center md:items-start gap-4"
+              >
+                <a href="mailto:hallo@feststube.de">
+                  <Button
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/30"
+                  >
+                    Angebot anfragen
+                  </Button>
+                </a>
+                <a href="tel:+4917612345678">
+                  <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg font-bold">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Anrufen
+                  </Button>
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+                className="flex flex-wrap gap-4 justify-center md:justify-start mt-8 text-sm text-muted-foreground"
+              >
+                {["Aufbau & Abbau inkl.", "bis 200 Gäste", "Ganzjährig", "Festpreis"].map((item) => (
+                  <span key={item} className="flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </span>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right: Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  className="absolute -bottom-4 -left-4 z-10 bg-background rounded-2xl border border-border shadow-xl px-5 py-3 flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Tent className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Professioneller Aufbau</p>
+                    <p className="text-sm font-bold text-foreground">in Esslingen & Umgebung</p>
+                  </div>
+                </motion.div>
+                <img
+                  src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"
+                  alt="Festliches Partyzelt bei einer Veranstaltung in Esslingen"
+                  className="w-full rounded-2xl shadow-2xl object-cover aspect-[3/4]"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Star } from "lucide-react";
-import heroImage from "@/assets/hero-photobooth.jpg";
+const heroImage = "/fotobox-2.jpg";
 
 const headlineLines = [
   "Die perfekte Fotobox",
