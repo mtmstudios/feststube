@@ -1,6 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/feststube-logo.png";
+import logo from "@/assets/feststube-logo-new.png";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
