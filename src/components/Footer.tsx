@@ -5,34 +5,63 @@ import logo from "@/assets/feststube-logo-2.png";
 const Footer = () => (
   <footer className="py-12 border-t border-border">
     <div className="container">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        {/* Brand */}
+        <div className="md:col-span-1">
           <img src={logo} alt="Feststube" className="h-10 w-auto mb-3 scale-x-[-1]" />
           <p className="text-sm text-muted-foreground">
-            Die premium Fotobox für unvergessliche Events in Esslingen und Umgebung.
+            Dein Partner für unvergessliche Events in Esslingen und Umgebung.
           </p>
         </div>
+
+        {/* Services */}
         <div>
-          <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
+          <h4 className="font-semibold text-foreground mb-3">Unsere Leistungen</h4>
+          <div className="flex flex-col gap-2 text-sm">
+            <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+              Fotobox mieten
+            </Link>
+            <Link to="/zeltvermietung" className="text-muted-foreground hover:text-foreground transition-colors">
+              Zeltvermietung
+            </Link>
+            <Link to="/veranstaltungstechnik" className="text-muted-foreground hover:text-foreground transition-colors">
+              Veranstaltungstechnik
+            </Link>
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="font-semibold text-foreground mb-3">Kontakt</h4>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-            <a href="mailto:hallo@feststube.de" className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Mail className="w-4 h-4" />
+            <a
+              href="mailto:hallo@feststube.de"
+              className="flex items-center gap-2 hover:text-foreground transition-colors"
+            >
+              <Mail className="w-4 h-4 shrink-0" />
               hallo@feststube.de
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4 shrink-0" />
               Esslingen am Neckar
             </span>
           </div>
         </div>
+
+        {/* Legal */}
         <div>
-          <h4 className="font-semibold text-foreground mb-2">Rechtliches</h4>
+          <h4 className="font-semibold text-foreground mb-3">Rechtliches</h4>
           <div className="flex flex-col gap-2 text-sm">
-            <Link to="/impressum" className="text-muted-foreground hover:text-foreground transition-colors">Impressum</Link>
-            <Link to="/datenschutz" className="text-muted-foreground hover:text-foreground transition-colors">Datenschutz</Link>
+            <Link to="/impressum" className="text-muted-foreground hover:text-foreground transition-colors">
+              Impressum
+            </Link>
+            <Link to="/datenschutz" className="text-muted-foreground hover:text-foreground transition-colors">
+              Datenschutz
+            </Link>
           </div>
         </div>
       </div>
+
       <div className="border-t border-border pt-6 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Feststube Esslingen. Alle Rechte vorbehalten.
       </div>
