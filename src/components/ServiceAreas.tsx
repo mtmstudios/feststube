@@ -69,7 +69,7 @@ const ServiceAreas = () => (
           return city.slug ? (
             <Link
               key={city.name}
-              to={`/stadt/${city.slug}`}
+              to={`/fotobox/${city.slug}`}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground hover:bg-primary/10 hover:border-primary/40 transition-all duration-200"
             >
               {content}
