@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/feststube-logo.png";
+import logo from "@/assets/feststube-logo-new.png";
 
 const navLinks = [
   { label: "Fotobox mieten", href: "/" },
@@ -42,7 +42,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Feststube" className="h-12 w-auto" />
+          <img src={logo} alt="Feststube" className="h-28 w-auto" />
         </Link>
 
         {/* Desktop nav */}

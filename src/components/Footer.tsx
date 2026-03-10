@@ -1,6 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/feststube-logo.png";
+import logo from "@/assets/feststube-logo-new.png";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         {/* Brand */}
         <div className="md:col-span-1">
-          <img src={logo} alt="Feststube" className="h-12 w-auto mb-3" />
+          <img src={logo} alt="Feststube" className="h-28 w-auto mb-3" />
           <p className="text-sm text-muted-foreground">
             Dein Partner für unvergessliche Events in Esslingen und Umgebung.
           </p>
