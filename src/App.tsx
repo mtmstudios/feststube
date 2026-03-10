@@ -11,6 +11,7 @@ import Zeltvermietung from "./pages/Zeltvermietung";
 import ZeltvermietungCityPage from "./pages/ZeltvermietungCityPage";
 import Veranstaltungstechnik from "./pages/Veranstaltungstechnik";
 import VeranstaltungstechnikCityPage from "./pages/VeranstaltungstechnikCityPage";
+import DigitaleEinladungskarte from "./pages/DigitaleEinladungskarte";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/zeltvermietung/:city" element={<ZeltvermietungCityPage />} />
           <Route path="/veranstaltungstechnik" element={<Veranstaltungstechnik />} />
           <Route path="/veranstaltungstechnik/:city" element={<VeranstaltungstechnikCityPage />} />
+          <Route path="/digitale-einladungskarte" element={<DigitaleEinladungskarte />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />

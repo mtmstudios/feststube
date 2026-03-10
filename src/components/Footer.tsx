@@ -27,6 +27,9 @@ const Footer = () => (
             <Link to="/veranstaltungstechnik" className="text-muted-foreground hover:text-foreground transition-colors">
               Veranstaltungstechnik
             </Link>
+            <Link to="/digitale-einladungskarte" className="text-muted-foreground hover:text-foreground transition-colors">
+              Digitale Einladungskarte
+            </Link>
           </div>
         </div>
 

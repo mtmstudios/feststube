@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Camera, Tent, Speaker, ArrowRight } from "lucide-react";
+import { Camera, Tent, Speaker, ArrowRight, Mail } from "lucide-react";
 
 const services = [
   {
@@ -24,6 +24,13 @@ const services = [
     href: "/veranstaltungstechnik",
     badge: "Neu",
   },
+  {
+    icon: Mail,
+    title: "Digitale Einladungskarte",
+    desc: "RSVP, Essensauswahl, Songwünsche & Live-Galerie – die moderne Einladung für eure Hochzeit.",
+    href: "/digitale-einladungskarte",
+    badge: "Neu",
+  },
 ];
 
 const ServicesTeaser = () => (
@@ -44,11 +51,11 @@ const ServicesTeaser = () => (
         transition={{ delay: 0.05 }}
         className="text-muted-foreground text-center mb-12 max-w-xl mx-auto"
       >
-        Fotobox, Zeltvermietung und Veranstaltungstechnik – alles aus einer Hand in
+        Fotobox, Zeltvermietung, Veranstaltungstechnik und digitale Einladungen – alles aus einer Hand in
         Esslingen und Umgebung.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((s, i) => (
           <motion.div
             key={s.title}

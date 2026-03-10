@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Fotobox mieten", href: "/" },
   { label: "Zeltvermietung", href: "/zeltvermietung" },
   { label: "Veranstaltungstechnik", href: "/veranstaltungstechnik" },
+  { label: "Digitale Einladung", href: "/digitale-einladungskarte" },
 ];
 
 const Header = () => {
