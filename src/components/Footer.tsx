@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         {/* Brand */}
         <div className="md:col-span-1">
-          <img src={logo} alt="Feststube" className="h-10 w-auto mb-3 scale-x-[-1]" />
+          <img src={logo} alt="Feststube" className="h-12 w-auto mb-3" />
           <p className="text-sm text-muted-foreground">
             Dein Partner für unvergessliche Events in Esslingen und Umgebung.
           </p>
