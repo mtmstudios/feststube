@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/feststube-logo-2.png";
+import logo from "@/assets/feststube-logo.png";
 
 const navLinks = [
   { label: "Fotobox mieten", href: "/" },
