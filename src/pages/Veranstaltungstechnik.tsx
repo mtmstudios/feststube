@@ -703,6 +703,54 @@ const Veranstaltungstechnik = () => {
             </p>
           </div>
         </section>
+
+        {/* Regional city links – SEO */}
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-foreground text-center mb-3">
+              Veranstaltungstechnik im Umkreis von Denkendorf
+            </h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
+              Wir liefern professionelle Event-Technik in einem Radius von 50 km – zuverlässig in alle Städte und Gemeinden rund um Esslingen.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {[
+                { name: "Stuttgart", slug: "stuttgart" },
+                { name: "Göppingen", slug: "goeppingen" },
+                { name: "Kirchheim unter Teck", slug: "kirchheim" },
+                { name: "Nürtingen", slug: "nuertingen" },
+                { name: "Ostfildern", slug: "ostfildern" },
+                { name: "Filderstadt", slug: "filderstadt" },
+                { name: "Leinfelden-Echterdingen", slug: "leinfelden-echterdingen" },
+                { name: "Plochingen", slug: "plochingen" },
+                { name: "Wendlingen", slug: "wendlingen" },
+                { name: "Wernau", slug: "wernau" },
+                { name: "Köngen", slug: "koegen" },
+                { name: "Denkendorf", slug: "denkendorf" },
+                { name: "Waiblingen", slug: "waiblingen" },
+                { name: "Schorndorf", slug: "schorndorf" },
+                { name: "Sindelfingen", slug: "sindelfingen" },
+                { name: "Böblingen", slug: "boeblingen" },
+                { name: "Reutlingen", slug: "reutlingen" },
+                { name: "Metzingen", slug: "metzingen" },
+                { name: "Tübingen", slug: "tuebingen" },
+                { name: "Geislingen", slug: "geislingen" },
+                { name: "Ludwigsburg", slug: "ludwigsburg" },
+                { name: "Heilbronn", slug: "heilbronn" },
+                { name: "Backnang", slug: "backnang" },
+                { name: "Schwäbisch Gmünd", slug: "schwaebisch-gmuend" },
+              ].map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/veranstaltungstechnik/${c.slug}`}
+                  className="px-4 py-2 rounded-full border border-border/60 text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+                >
+                  Veranstaltungstechnik {c.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

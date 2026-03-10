@@ -8,7 +8,9 @@ import CityPage from "./pages/CityPage";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Zeltvermietung from "./pages/Zeltvermietung";
+import ZeltvermietungCityPage from "./pages/ZeltvermietungCityPage";
 import Veranstaltungstechnik from "./pages/Veranstaltungstechnik";
+import VeranstaltungstechnikCityPage from "./pages/VeranstaltungstechnikCityPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +25,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/stadt/:city" element={<CityPage />} />
           <Route path="/zeltvermietung" element={<Zeltvermietung />} />
+          <Route path="/zeltvermietung/:city" element={<ZeltvermietungCityPage />} />
           <Route path="/veranstaltungstechnik" element={<Veranstaltungstechnik />} />
+          <Route path="/veranstaltungstechnik/:city" element={<VeranstaltungstechnikCityPage />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />
