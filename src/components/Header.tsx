@@ -26,7 +26,14 @@ const Header = () => {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   const scrollToFunnel = () => {
+    setMenuOpen(false);
     if (location.pathname !== "/") {
       window.location.href = "/#booking-funnel";
       return;
@@ -41,9 +48,9 @@ const Header = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16">
-        {/* Logo */}
+        {/* Logo — compact on mobile, full-size on desktop */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Feststube" className="h-28 w-auto" />
+          <img src={logo} alt="Feststube" className="h-10 md:h-28 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -72,25 +79,27 @@ const Header = () => {
           >
             Jetzt anfragen
           </Button>
+          {/* 44×44px minimum touch target */}
           <button
-            className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            className="md:hidden p-2.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Menü öffnen"
+            aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — fixed overlay, full viewport height minus header */}
       {menuOpen && (
-        <div className="md:hidden glass border-t border-border/50">
+        <div className="md:hidden glass border-t border-border/50 fixed left-0 right-0 top-16 overflow-y-auto max-h-[calc(100vh-4rem)]">
           <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                className={`px-4 py-3.5 rounded-xl text-sm font-medium transition-colors ${
                   location.pathname === link.href
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -102,7 +111,7 @@ const Header = () => {
             <Button
               onClick={scrollToFunnel}
               size="sm"
-              className="mt-2 bg-primary text-primary-foreground hover:bg-primary/80 rounded-full font-semibold"
+              className="mt-3 bg-primary text-primary-foreground hover:bg-primary/80 rounded-full font-semibold py-5"
             >
               Jetzt anfragen
             </Button>

@@ -26,29 +26,30 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <section className="py-20 md:py-28 bg-muted/50">
+  <section className="py-12 md:py-20 bg-muted/50">
     <div className="container max-w-2xl">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-extrabold text-foreground text-center mb-12"
+        transition={{ duration: 0.4 }}
+        className="text-2xl md:text-4xl font-extrabold text-foreground text-center mb-8 md:mb-12"
       >
         Häufige Fragen
       </motion.h2>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.08, duration: 0.4 }}
       >
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-foreground font-semibold">
+              <AccordionTrigger className="text-left text-foreground font-semibold text-sm md:text-base py-4">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm leading-relaxed">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>

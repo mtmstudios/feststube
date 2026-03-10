@@ -29,47 +29,44 @@ const features = [
 ];
 
 const BentoFeatures = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-12 md:py-20 bg-background">
     <div className="container max-w-4xl">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-extrabold text-foreground text-center mb-3"
+        transition={{ duration: 0.4 }}
+        className="text-2xl md:text-4xl font-extrabold text-foreground text-center mb-3"
       >
         Warum Feststube?
       </motion.h2>
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.05 }}
-        className="text-muted-foreground text-center mb-12"
+        transition={{ delay: 0.05, duration: 0.4 }}
+        className="text-muted-foreground text-center mb-8 md:mb-12 text-sm md:text-base"
       >
         Alles aus einer Hand – von der Lieferung bis zum digitalen Fotoalbum.
       </motion.p>
 
-      {/* True bento: wide → narrow | narrow → wide */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* Bento grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
         {features.map((f, i) => (
           <motion.div
             key={f.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            whileHover={{ y: -8, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-            className={`group rounded-2xl border border-border/50 bg-card p-7 hover:shadow-xl transition-shadow duration-300 flex flex-col cursor-default${
+            transition={{ delay: i * 0.08, duration: 0.35 }}
+            className={`group rounded-2xl border border-border/50 bg-card p-4 md:p-7 hover:shadow-lg transition-shadow duration-300 flex flex-col cursor-default${
               f.wide ? " md:col-span-2" : ""
             }`}
           >
-            <motion.div
-              whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.4 } }}
-              className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors"
-            >
-              <f.icon className="w-6 h-6 text-primary" />
-            </motion.div>
-            <h3 className="text-lg font-bold text-foreground mb-2">{f.title}</h3>
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-primary/15 transition-colors">
+              <f.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            </div>
+            <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{f.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
           </motion.div>
         ))}

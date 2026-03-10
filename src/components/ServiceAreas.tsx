@@ -32,37 +32,40 @@ const cities = [
 ];
 
 const ServiceAreas = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-12 md:py-20 bg-background">
     <div className="container max-w-4xl text-center">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-extrabold text-foreground mb-3"
+        transition={{ duration: 0.4 }}
+        className="text-2xl md:text-4xl font-extrabold text-foreground mb-3"
       >
         Wir bringen die Party zu dir.
       </motion.h2>
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="text-muted-foreground mb-10"
+        transition={{ delay: 0.08, duration: 0.4 }}
+        className="text-muted-foreground mb-8 text-sm md:text-base"
       >
         Fotobox-Lieferung im 50-km-Umkreis um Denkendorf – für alle Städte und Gemeinden in der Region Stuttgart.
       </motion.p>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-3"
+        transition={{ delay: 0.15, duration: 0.4 }}
+        className="flex flex-wrap justify-center gap-2"
       >
         {cities.map((city) => {
           const content = (
             <>
-              <MapPin className="w-4 h-4 shrink-0" />
-              Fotobox mieten {city.name}
+              <MapPin className="w-3.5 h-3.5 shrink-0" />
+              {/* On mobile: show only city name. On sm+: show full label */}
+              <span className="sm:hidden">{city.name}</span>
+              <span className="hidden sm:inline">Fotobox mieten {city.name}</span>
             </>
           );
 
@@ -70,14 +73,14 @@ const ServiceAreas = () => (
             <Link
               key={city.name}
               to={`/fotobox/${city.slug}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground hover:bg-primary/10 hover:border-primary/40 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border text-xs sm:text-sm font-medium text-foreground hover:bg-primary/10 hover:border-primary/40 transition-all duration-200"
             >
               {content}
             </Link>
           ) : (
             <span
               key={city.name}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-sm font-medium text-foreground"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary/30 bg-primary/5 text-xs sm:text-sm font-medium text-foreground"
             >
               {content}
             </span>
