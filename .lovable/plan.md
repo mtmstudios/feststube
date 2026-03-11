@@ -1,18 +1,27 @@
 
-Der Nutzer fragt nach den DNS-Einstellungen für seine Domain bei Mittwald. Lovable zeigt verschiedene DNS-Datensätze an, aber er braucht nur die grundlegenden, um die Website live zu schalten.
+## DNS TXT-Record für Google Search Console Verifizierung
 
-**Lösung:**
-Bei der Domain-Einrichtung in Lovable werden standardmäßig verschiedene DNS-Records angezeigt. Für das reine Hosten der Website braucht er aber nur:
+Du musst einen **TXT-Record** bei Mittwald hinzufügen, um die Google Search Console Verifizierung über DNS zu bestätigen.
 
-1. **A-Record** (Root-Domain @ und www) → zeigt auf 185.158.133.1
-2. **TXT-Record** → nur für die Verifizierung der Domain-Eigentümerschaft
+### Konfiguration bei Mittwald:
 
-**Cloud DNS und Mail DNS kann er ignorieren**, wenn er keine E-Mail-Dienste über Lovable nutzen möchte (was bei einer reinen Website-Präsenz üblich ist).
+| Typ | Name | Wert |
+|-----|------|------|
+| **TXT** | **@** (oder leer/feststube.de) | `google-site-verification=uotE1c0dvjbp9XN_1gelVyBezhaBqf4zW8svrA6wJks` |
 
-**Schritte:**
-1. Nur die A-Records und den TXT-Record bei Mittwald eintragen
-2. Cloud DNS- und Mail DNS-Daten einfach überspringen/ignorieren
-3. Auf DNS-Propagation warten (bis zu 72h)
-4. Domain in Lovable als "Active" sehen
+### Wichtige Hinweise:
+- **Name**: Bei manchen DNS-Interfaces musst du `@` eingeben, bei anderen lässt du das Feld leer für die Root-Domain
+- **Wert**: Der komplette String inklusive `google-site-verification=`
+- **Propagationszeit**: Wie alle DNS-Änderungen kann dies bis zu 72 Stunden dauern
 
-Die anderen Records sind optional und nur relevant, wenn er zusätzliche Dienste (wie E-Mail-Hosting) über Lovable einrichten möchte – was er explizit nicht braucht.
+### Schritte:
+1. Logge dich bei Mittwald ein
+2. Gehe zu den DNS-Einstellungen für feststube.de
+3. Füge einen neuen TXT-Record hinzu mit:
+   - Type: TXT
+   - Name: @ (oder leer lassen)
+   - Value: `google-site-verification=uotE1c0dvjbp9XN_1gelVyBezhaBqf4zW8svrA6wJks`
+4. Speichern und warten auf DNS-Propagation
+5. In der Google Search Console auf **"Verifizieren"** klicken
+
+Hast du schon die **Sitemap.xml** bei Google Search Console eingereicht? Das sollte der nächste Schritt nach der Verifizierung sein.
