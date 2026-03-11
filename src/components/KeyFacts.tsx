@@ -22,7 +22,7 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
-          const duration = 1500;
+          const duration = 900;
           const start = performance.now();
           const animate = (now: number) => {
             const progress = Math.min((now - start) / duration, 1);
@@ -48,22 +48,23 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
 };
 
 const KeyFacts = () => (
-  <section className="py-16 md:py-20 bg-background">
+  <section className="py-12 md:py-16 bg-background">
     <div className="container max-w-4xl">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="rounded-2xl border border-border/60 bg-card shadow-sm px-8 py-10"
+        transition={{ duration: 0.4 }}
+        className="rounded-2xl border border-border/60 bg-card shadow-sm px-6 md:px-8 py-8 md:py-10"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border/50">
           {facts.map((fact, i) => (
             <motion.div
               key={fact.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.07, duration: 0.35 }}
               className="flex flex-col items-center text-center gap-2 py-6 md:py-0 px-4 first:pt-0 last:pb-0 md:first:pt-0 md:last:pb-0"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-1">

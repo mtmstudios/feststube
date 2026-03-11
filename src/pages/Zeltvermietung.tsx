@@ -184,7 +184,7 @@ const Zeltvermietung = () => {
             "@id": "https://feststube.de/#business",
             "name": "Feststube – Zeltvermietung Esslingen",
             "telephone": "+4917612345678",
-            "email": "hallo@feststube.de",
+            "email": "info@feststube.de",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Esslingen am Neckar",
@@ -291,7 +291,7 @@ const Zeltvermietung = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex flex-col sm:flex-row items-center md:items-start gap-4"
               >
-                <a href="mailto:hallo@feststube.de">
+                <a href="mailto:info@feststube.de">
                   <Button
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/30"
@@ -583,7 +583,7 @@ const Zeltvermietung = () => {
               transition={{ delay: 0.2 }}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <a href="mailto:hallo@feststube.de">
+              <a href="mailto:info@feststube.de">
                 <Button
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/30"

@@ -188,7 +188,7 @@ const BookingFunnel = () => {
                 </a>
                 {/* Email link as proper tap target */}
                 <a
-                  href="mailto:info@feststube-esslingen.de?subject=Fotobox Anfrage"
+                  href="mailto:info@feststube.de?subject=Fotobox Anfrage"
                   className="flex items-center justify-center gap-2 mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors py-3 rounded-xl hover:bg-muted/50"
                 >
                   <Mail className="w-4 h-4" />

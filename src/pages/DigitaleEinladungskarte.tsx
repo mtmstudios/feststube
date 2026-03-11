@@ -200,7 +200,7 @@ const DigitaleEinladungskarte = () => {
           addressCountry: "DE",
         },
         telephone: "+4917612345678",
-        email: "hallo@feststube.de",
+        email: "info@feststube.de",
       },
       areaServed: "Region Stuttgart",
       serviceType: "Digitale Einladungskarte",
@@ -254,7 +254,7 @@ const DigitaleEinladungskarte = () => {
                 mit RSVP, Live-Galerie und allem, was eure Hochzeit unvergesslich macht.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <a href="mailto:hallo@feststube.de">
+                <a href="mailto:info@feststube.de">
                   <Button
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/25 w-full sm:w-auto"
@@ -734,7 +734,7 @@ const DigitaleEinladungskarte = () => {
                 besprechen gemeinsam, wie eure Einladung aussehen soll.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hallo@feststube.de">
+                <a href="mailto:info@feststube.de">
                   <Button
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 font-bold shadow-lg shadow-primary/25"

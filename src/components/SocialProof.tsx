@@ -8,21 +8,22 @@ const reviews = [
 ];
 
 const getInitial = (dir: string) => {
-  if (dir === "left")   return { opacity: 0, x: -40 };
-  if (dir === "right")  return { opacity: 0, x: 40 };
-  return { opacity: 0, y: 40 };
+  if (dir === "left")  return { opacity: 0, x: -20 };
+  if (dir === "right") return { opacity: 0, x: 20 };
+  return { opacity: 0, y: 16 };
 };
 
 const SocialProof = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-12 md:py-20 bg-background">
     <div className="container max-w-4xl">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        transition={{ duration: 0.4 }}
+        className="text-center mb-10 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground mb-3">
           Das sagen unsere Kunden
         </h2>
         <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
@@ -43,9 +44,8 @@ const SocialProof = () => (
             initial={getInitial(r.dir)}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.12, duration: 0.55, ease: [0.33, 1, 0.68, 1] }}
-            whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 22 } }}
-            className="bg-card rounded-2xl border border-border/50 p-6 flex flex-col relative cursor-default"
+            transition={{ delay: i * 0.08, duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+            className="bg-card rounded-2xl border border-border/50 p-6 flex flex-col relative cursor-default hover:-translate-y-1 transition-transform duration-200"
           >
             {/* Decorative quote mark */}
             <span

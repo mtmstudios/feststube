@@ -38,11 +38,11 @@ const Footer = () => (
           <h4 className="font-semibold text-foreground mb-3 text-sm md:text-base">Kontakt</h4>
           <div className="flex flex-col gap-2.5 text-sm text-muted-foreground">
             <a
-              href="mailto:hallo@feststube.de"
+              href="mailto:info@feststube.de"
               className="flex items-center gap-2 hover:text-foreground transition-colors"
             >
               <Mail className="w-4 h-4 shrink-0" />
-              hallo@feststube.de
+              info@feststube.de
             </a>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4 shrink-0" />

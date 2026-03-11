@@ -16,22 +16,23 @@ const posts = [
 ];
 
 const InstagramFeed = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-12 md:py-20 bg-background">
     <div className="container max-w-4xl">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-extrabold text-foreground text-center mb-3"
+        transition={{ duration: 0.4 }}
+        className="text-2xl md:text-4xl font-extrabold text-foreground text-center mb-3"
       >
         Folge uns auf Instagram
       </motion.h2>
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="text-muted-foreground text-center mb-12"
+        transition={{ delay: 0.08, duration: 0.4 }}
+        className="text-muted-foreground text-center mb-10 md:mb-12"
       >
         @feststubestuttgart – Inspiration, echte Events und jede Menge Spaß.
       </motion.p>
@@ -43,18 +44,18 @@ const InstagramFeed = () => (
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.07, duration: 0.35 }}
             className="group relative aspect-square rounded-2xl overflow-hidden"
           >
             <img
               src={post.src}
               alt={post.alt}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-foreground/0 backdrop-blur-0 group-hover:bg-foreground/40 group-hover:backdrop-blur-sm transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-all duration-250 flex items-center justify-center opacity-0 group-hover:opacity-100">
               <div className="flex items-center gap-4 text-background font-semibold text-sm">
                 <span className="flex items-center gap-1.5">
                   <Heart className="w-5 h-5 fill-current" />
@@ -71,10 +72,10 @@ const InstagramFeed = () => (
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
         className="flex justify-center mt-10"
       >
         <Button
