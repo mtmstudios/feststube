@@ -9,7 +9,7 @@ import LocalSEOBlock from "@/components/LocalSEOBlock";
 import GalleryInfo from "@/components/GalleryInfo";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import WhatsAppFAB from "@/components/WhatsAppFAB";
+
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
