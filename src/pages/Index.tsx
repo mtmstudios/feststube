@@ -12,7 +12,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 import ServiceAreas from "@/components/ServiceAreas";
 import ServicesTeaser from "@/components/ServicesTeaser";
 import Footer from "@/components/Footer";
-import WhatsAppFAB from "@/components/WhatsAppFAB";
+
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import ScrollProgress from "@/components/ScrollProgress";
 
