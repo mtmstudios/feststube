@@ -30,7 +30,7 @@ const Impressum = () => {
             <h2 className="text-lg font-bold text-foreground mb-2">Angaben gemäß § 5 TMG</h2>
             <p className="text-muted-foreground leading-relaxed">
               Sahra Dettenrieder<br />
-              Feststube – Fotobox Esslingen<br />
+              Feststube Events<br />
               Klingenstraße 6<br />
               73770 Denkendorf<br />
               Deutschland
