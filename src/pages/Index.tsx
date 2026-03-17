@@ -171,7 +171,7 @@ const Index = () => {
         <ServicesTeaser />
       </main>
       <Footer />
-      <WhatsAppFAB />
+      
       <AccessibilityWidget />
     </div>
   );

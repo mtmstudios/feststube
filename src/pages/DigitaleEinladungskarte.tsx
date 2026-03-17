@@ -752,7 +752,7 @@ const DigitaleEinladungskarte = () => {
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };

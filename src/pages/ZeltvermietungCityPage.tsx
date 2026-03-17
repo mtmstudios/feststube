@@ -347,7 +347,7 @@ const ZeltvermietungCityPage = () => {
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };

@@ -347,7 +347,7 @@ const VeranstaltungstechnikCityPage = () => {
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };

@@ -754,7 +754,7 @@ const Veranstaltungstechnik = () => {
       </main>
 
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };

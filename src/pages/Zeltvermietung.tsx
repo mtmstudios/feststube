@@ -662,7 +662,7 @@ const Zeltvermietung = () => {
       </main>
 
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };
