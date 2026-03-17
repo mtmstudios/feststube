@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, MessageCircle, Mail, Baby, GraduationCap, MoreHorizontal } from "lucide-react";
+import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, Mail, Baby, GraduationCap, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
