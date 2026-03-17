@@ -170,19 +170,22 @@ const BookingFunnel = () => {
                     </p>
                   )}
                 </div>
-                <a href={buildWhatsAppURL()} target="_blank" rel="noopener noreferrer" className="block">
-                  <Button size="lg" className="w-full bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,38%)] text-white rounded-full py-6 text-base md:text-lg font-bold shadow-lg active:scale-95 transition-transform">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Anfrage per WhatsApp senden
-                  </Button>
-                </a>
-                {/* Email link as proper tap target */}
                 <a
-                  href="mailto:info@feststube.de?subject=Fotobox Anfrage"
-                  className="flex items-center justify-center gap-2 mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors py-3 rounded-xl hover:bg-muted/50"
+                  href={`mailto:info@feststube.de?subject=Fotobox Anfrage&body=${encodeURIComponent(
+                    [
+                      `Hallo Feststube! 👋`,
+                      `Ich suche eine Fotobox für ${eventType ? eventLabels[eventType] : ""}`,
+                      `Dauer: ${duration ? durationLabels[duration] : ""}`,
+                      extras.length > 0 ? `Extras: ${extras.map((e) => extraLabels[e]).join(", ")}` : "",
+                      `Ich freue mich auf eure Rückmeldung!`,
+                    ].filter(Boolean).join("\n")
+                  )}`}
+                  className="block"
                 >
-                  <Mail className="w-4 h-4" />
-                  Oder klassisch per E-Mail
+                  <Button size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-full py-6 text-base md:text-lg font-bold shadow-lg active:scale-95 transition-transform">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Anfrage per E-Mail senden
+                  </Button>
                 </a>
               </motion.div>
             )}
