@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppFAB from "@/components/WhatsAppFAB";
+
 
 /* ─── Data ─────────────────────────────────────────────── */
 
@@ -754,7 +754,7 @@ const Veranstaltungstechnik = () => {
       </main>
 
       <Footer />
-      <WhatsAppFAB />
+      
     </div>
   );
 };
