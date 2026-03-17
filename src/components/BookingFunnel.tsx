@@ -52,16 +52,6 @@ const BookingFunnel = () => {
 
   const canProceed = (step === 1 && eventType) || (step === 2 && duration) || step === 3;
 
-  const buildWhatsAppURL = () => {
-    const lines = [
-      `Hallo Feststube! 👋`,
-      `Ich suche eine Fotobox für ${eventType ? eventLabels[eventType] : ""}`,
-      `Dauer: ${duration ? durationLabels[duration] : ""}`,
-      extras.length > 0 ? `Extras: ${extras.map((e) => extraLabels[e]).join(", ")}` : "",
-      `Ich freue mich auf eure Rückmeldung!`,
-    ].filter(Boolean).join("\n");
-    return `https://wa.me/4917612345678?text=${encodeURIComponent(lines)}`;
-  };
 
   return (
     <section id="booking-funnel" className="py-12 md:py-28 bg-muted/50">
