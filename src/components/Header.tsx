@@ -50,7 +50,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         {/* Logo — compact on mobile, full-size on desktop */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Feststube" className="h-10 md:h-28 w-auto" />
+          <img src={logo} alt="Feststube" className="h-14 md:h-36 w-auto" />
         </Link>
 
         {/* Desktop nav */}
