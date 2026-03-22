@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, Mail, Baby, GraduationCap, MoreHorizontal } from "lucide-react";
+import { Heart, Briefcase, PartyPopper, Clock, Moon, CalendarDays, Image, Glasses, BookOpen, Mail, Baby, GraduationCap, MoreHorizontal, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 type EventType = "hochzeit" | "firmenfeier" | "party" | "taufe" | "abiball" | "sonstiges";
 type Duration = "stunden" | "abend" | "wochenende";
 type Extra = "hintergrund" | "requisiten" | "gaestebuch";
+
+const WEBHOOK_URL = "https://mtmstudios.app.n8n.cloud/webhook/feststube-anfrage";
 
 const eventOptions = [
   { id: "hochzeit" as EventType, label: "Hochzeit", icon: Heart },
@@ -33,7 +36,6 @@ const eventLabels: Record<EventType, string> = { hochzeit: "eine Hochzeit", firm
 const durationLabels: Record<Duration, string> = { stunden: "ein paar Stunden", abend: "den ganzen Abend", wochenende: "ein komplettes Wochenende" };
 const extraLabels: Record<Extra, string> = { hintergrund: "Premium Hintergrund", requisiten: "Requisiten-Koffer", gaestebuch: "Gästebuch-Service" };
 
-// Reduced travel distance for snappier step transitions
 const slideVariants = {
   enter: { x: 30, opacity: 0 },
   center: { x: 0, opacity: 1 },
@@ -46,12 +48,48 @@ const BookingFunnel = () => {
   const [duration, setDuration] = useState<Duration | null>(null);
   const [extras, setExtras] = useState<Extra[]>([]);
 
+  // Step 4 contact fields
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
   const toggleExtra = (id: Extra) => {
     setExtras((prev) => prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]);
   };
 
   const canProceed = (step === 1 && eventType) || (step === 2 && duration) || step === 3;
+  const canSubmit = name.trim().length > 1 && email.trim().includes("@");
 
+  const handleSubmit = async () => {
+    if (!canSubmit) return;
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "funnel",
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          eventType,
+          duration,
+          extras,
+        }),
+      });
+      if (!res.ok) throw new Error("Serverfehler");
+      setSubmitted(true);
+    } catch {
+      setError("Etwas ist schiefgelaufen. Bitte schreib uns direkt: info@feststube.de");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="booking-funnel" className="py-12 md:py-28 bg-muted/50">
@@ -82,7 +120,6 @@ const BookingFunnel = () => {
               <motion.div key="step1" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.22 }}>
                 <h2 className="text-xl md:text-3xl font-bold text-foreground mb-1">Was feierst du?</h2>
                 <p className="text-muted-foreground mb-5 text-sm md:text-base">Wähle deinen Event-Typ.</p>
-                {/* 2 cols on mobile (compact), 3 on sm+ */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {eventOptions.map((opt) => (
                     <button
@@ -154,15 +191,17 @@ const BookingFunnel = () => {
               </motion.div>
             )}
 
-            {step === 4 && (
+            {step === 4 && !submitted && (
               <motion.div key="step4" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.22 }}>
-                <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Lass uns quatschen!</h2>
+                <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Fast geschafft!</h2>
+
+                {/* Summary */}
                 <div className="bg-muted rounded-xl p-4 mb-5 text-foreground">
                   <p className="text-sm text-muted-foreground mb-1">Deine Zusammenfassung:</p>
                   <p className="font-semibold text-sm md:text-base">
-                    Du suchst eine Fotobox für{" "}
+                    Fotobox für{" "}
                     <span className="text-primary">{eventType ? eventLabels[eventType] : ""}</span>{" "}
-                    für <span className="text-primary">{duration ? durationLabels[duration] : ""}</span>.
+                    · <span className="text-primary">{duration ? durationLabels[duration] : ""}</span>
                   </p>
                   {extras.length > 0 && (
                     <p className="mt-1 text-sm">
@@ -170,30 +209,74 @@ const BookingFunnel = () => {
                     </p>
                   )}
                 </div>
-                <a
-                  href={`mailto:info@feststube.de?subject=Fotobox Anfrage&body=${encodeURIComponent(
-                    [
-                      `Hallo Feststube! 👋`,
-                      `Ich suche eine Fotobox für ${eventType ? eventLabels[eventType] : ""}`,
-                      `Dauer: ${duration ? durationLabels[duration] : ""}`,
-                      extras.length > 0 ? `Extras: ${extras.map((e) => extraLabels[e]).join(", ")}` : "",
-                      `Ich freue mich auf eure Rückmeldung!`,
-                    ].filter(Boolean).join("\n")
-                  )}`}
-                  className="block"
+
+                {/* Contact fields */}
+                <p className="text-muted-foreground text-sm mb-3">Wohin sollen wir dein Angebot schicken?</p>
+                <div className="space-y-3">
+                  <Input
+                    placeholder="Dein Name *"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="rounded-xl"
+                  />
+                  <Input
+                    type="email"
+                    placeholder="E-Mail Adresse *"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="rounded-xl"
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Telefon (optional)"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="rounded-xl"
+                  />
+                </div>
+
+                {error && (
+                  <p className="text-sm text-destructive mt-3">{error}</p>
+                )}
+
+                <Button
+                  size="lg"
+                  onClick={handleSubmit}
+                  disabled={!canSubmit || submitting}
+                  className="w-full mt-4 rounded-full py-6 text-base md:text-lg font-bold shadow-lg active:scale-95 transition-transform"
                 >
-                  <Button size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-full py-6 text-base md:text-lg font-bold shadow-lg active:scale-95 transition-transform">
-                    <Mail className="w-5 h-5 mr-2" />
-                    Anfrage per E-Mail senden
-                  </Button>
+                  {submitting ? (
+                    <><Loader2 className="w-5 h-5 mr-2 animate-spin" /> Wird gesendet…</>
+                  ) : (
+                    "Unverbindliches Angebot anfragen →"
+                  )}
+                </Button>
+
+                <
+                  href="mailto:info@feststube.de?subject=Fotobox Anfrage"
+                  className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  Oder klassisch per E-Mail
                 </a>
+              </motion.div>
+            )}
+
+            {step === 4 && submitted && (
+              <motion.div key="success" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }} className="text-center py-6">
+                <CheckCircle2 className="w-16 h-16 text-[hsl(142,70%,45%)] mx-auto mb-4" />
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Anfrage gesendet! 🎉</h2>
+                <p className="text-muted-foreground">
+                  Danke, <span className="font-semibold text-foreground">{name}</span>! Wir melden uns so schnell wie möglich bei dir.
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">Schau auch in deinen Spam-Ordner.</p>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Navigation — full-width "Weiter" on mobile */}
+          {/* Navigation */}
           <div className="flex justify-between items-center mt-6 gap-3">
-            {step > 1 ? (
+            {step > 1 && !submitted ? (
               <Button variant="ghost" onClick={() => setStep((s) => s - 1)} className="text-muted-foreground px-4">
                 ← Zurück
               </Button>

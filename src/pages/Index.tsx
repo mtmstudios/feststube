@@ -11,6 +11,7 @@ import FAQ from "@/components/FAQ";
 import InstagramFeed from "@/components/InstagramFeed";
 import ServiceAreas from "@/components/ServiceAreas";
 import ServicesTeaser from "@/components/ServicesTeaser";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 import AccessibilityWidget from "@/components/AccessibilityWidget";
@@ -169,6 +170,7 @@ const Index = () => {
         <InstagramFeed />
         <ServiceAreas />
         <ServicesTeaser />
+        <ContactForm />
       </main>
       <Footer />
       
