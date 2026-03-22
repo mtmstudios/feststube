@@ -223,7 +223,7 @@ const Veranstaltungstechnik = () => {
             "@type": "LocalBusiness",
             "@id": "https://feststube.de/#business",
             "name": "Feststube – Veranstaltungstechnik Esslingen",
-            "telephone": "+4917612345678",
+            "telephone": "+4915901610537",
             "email": "info@feststube.de",
             "address": {
               "@type": "PostalAddress",
@@ -338,7 +338,7 @@ const Veranstaltungstechnik = () => {
                     Angebot anfragen
                   </Button>
                 </a>
-                <a href="tel:+4917612345678">
+                <a href="tel:+4915901610537">
                   <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg font-bold">
                     <Phone className="w-5 h-5 mr-2" />
                     Anrufen
@@ -679,7 +679,7 @@ const Veranstaltungstechnik = () => {
                   Angebot per E-Mail
                 </Button>
               </a>
-              <a href="tel:+4917612345678">
+              <a href="tel:+4915901610537">
                 <Button
                   size="lg"
                   variant="outline"

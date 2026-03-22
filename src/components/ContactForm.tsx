@@ -71,11 +71,11 @@ const ContactForm = () => {
                 </div>
                 <span className="font-medium">info@feststube.de</span>
               </a>
-              <a href="tel:+4917612345678" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+              <a href="tel:+4915901610537" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
-                <span className="font-medium">+49 176 12345678</span>
+                <span className="font-medium">+49 1590 1610537</span>
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">

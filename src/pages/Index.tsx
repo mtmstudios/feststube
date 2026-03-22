@@ -91,7 +91,7 @@ const Index = () => {
           "name": "Feststube – Fotobox Esslingen",
           "description": "Premium Fotobox mieten in Esslingen und Umgebung. DSLR-Qualität, Sofort-Druck, kostenloser Aufbau ab 249 €.",
           "url": "https://feststube.de",
-          "telephone": "+4917612345678",
+          "telephone": "+4915901610537",
           "email": "info@feststube.de",
           "priceRange": "€€",
           "address": {

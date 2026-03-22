@@ -69,7 +69,7 @@ const CityPage = () => {
           postalCode: "73770",
           addressCountry: "DE",
         },
-        telephone: "+4917612345678",
+        telephone: "+4915901610537",
         email: "info@feststube.de",
       },
       areaServed: data.name,
