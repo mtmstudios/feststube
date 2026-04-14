@@ -85,7 +85,7 @@ const BookingFunnel = () => {
       if (!res.ok) throw new Error("Serverfehler");
       setSubmitted(true);
     } catch {
-      setError("Etwas ist schiefgelaufen. Bitte schreib uns direkt: info@feststube.de");
+      setError("Etwas ist schiefgelaufen. Bitte schreib uns direkt: feststube@gmail.com");
     } finally {
       setSubmitting(false);
     }
@@ -253,7 +253,7 @@ const BookingFunnel = () => {
                 </Button>
 
                 <
-                  href="mailto:info@feststube.de?subject=Fotobox Anfrage"
+                  href="mailto:feststube@gmail.com?subject=Fotobox Anfrage"
                   className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   <Mail className="w-4 h-4" />

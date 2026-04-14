@@ -36,8 +36,8 @@ const Datenschutz = () => {
               Feststube – Fotobox Esslingen<br />
               Klingenstraße 6, 73770 Denkendorf<br />
               E-Mail:{" "}
-              <a href="mailto:info@feststube.de" className="text-primary hover:underline">
-                info@feststube.de
+              <a href="mailto:feststube@gmail.com" className="text-primary hover:underline">
+                feststube@gmail.com
               </a>
             </p>
           </section>
@@ -131,8 +131,8 @@ const Datenschutz = () => {
             </ul>
             <p className="mt-3">
               Zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an:{" "}
-              <a href="mailto:info@feststube.de" className="text-primary hover:underline">
-                info@feststube.de
+              <a href="mailto:feststube@gmail.com" className="text-primary hover:underline">
+                feststube@gmail.com
               </a>
             </p>
             <p className="mt-2">

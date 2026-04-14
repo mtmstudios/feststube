@@ -38,7 +38,7 @@ const ContactForm = () => {
       if (!res.ok) throw new Error("Serverfehler");
       setSubmitted(true);
     } catch {
-      setError("Etwas ist schiefgelaufen. Schreib uns direkt: info@feststube.de");
+      setError("Etwas ist schiefgelaufen. Schreib uns direkt: feststube@gmail.com");
     } finally {
       setSubmitting(false);
     }
@@ -65,11 +65,11 @@ const ContactForm = () => {
             </p>
 
             <div className="space-y-4">
-              <a href="mailto:info@feststube.de" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+              <a href="mailto:feststube@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
-                <span className="font-medium">info@feststube.de</span>
+                <span className="font-medium">feststube@gmail.com</span>
               </a>
               <a href="tel:+4915901610537" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">

@@ -127,7 +127,7 @@ const VeranstaltungstechnikCityPage = () => {
           addressCountry: "DE",
         },
         telephone: "+4915901610537",
-        email: "info@feststube.de",
+        email: "feststube@gmail.com",
       },
       areaServed: data.name,
       serviceType: "Veranstaltungstechnik",
@@ -174,7 +174,7 @@ const VeranstaltungstechnikCityPage = () => {
               <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8">
                 {data.heroSubtext}
               </p>
-              <a href="mailto:info@feststube.de">
+              <a href="mailto:feststube@gmail.com">
                 <Button
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-primary/25"
@@ -325,7 +325,7 @@ const VeranstaltungstechnikCityPage = () => {
               individuellen Angebot für euer Event.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@feststube.de">
+              <a href="mailto:feststube@gmail.com">
                 <Button
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-10 font-bold shadow-lg shadow-primary/25"
