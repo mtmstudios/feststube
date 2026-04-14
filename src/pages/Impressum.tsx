@@ -41,8 +41,8 @@ const Impressum = () => {
             <h2 className="text-lg font-bold text-foreground mb-2">Kontakt</h2>
             <p className="text-muted-foreground leading-relaxed">
               E-Mail:{" "}
-              <a href="mailto:info@feststube.de" className="text-primary hover:underline">
-                info@feststube.de
+              <a href="mailto:feststube@gmail.com" className="text-primary hover:underline">
+                feststube@gmail.com
               </a>
             </p>
           </section>

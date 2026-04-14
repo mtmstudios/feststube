@@ -70,7 +70,7 @@ const CityPage = () => {
           addressCountry: "DE",
         },
         telephone: "+4915901610537",
-        email: "info@feststube.de",
+        email: "feststube@gmail.com",
       },
       areaServed: data.name,
       serviceType: "Fotobox mieten",
