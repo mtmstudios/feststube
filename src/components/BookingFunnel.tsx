@@ -252,7 +252,7 @@ const BookingFunnel = () => {
                   )}
                 </Button>
 
-                <
+                <a
                   href="mailto:feststube@gmail.com?subject=Fotobox Anfrage"
                   className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
